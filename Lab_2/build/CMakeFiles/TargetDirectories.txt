@@ -1,5 +1,0 @@
-/home/tea_shroom/Programming/cpp_4_sem/Lab_2/build/CMakeFiles/cubic2d.dir
-/home/tea_shroom/Programming/cpp_4_sem/Lab_2/build/CMakeFiles/cubic3d.dir
-/home/tea_shroom/Programming/cpp_4_sem/Lab_2/build/CMakeFiles/tetr3d.dir
-/home/tea_shroom/Programming/cpp_4_sem/Lab_2/build/CMakeFiles/edit_cache.dir
-/home/tea_shroom/Programming/cpp_4_sem/Lab_2/build/CMakeFiles/rebuild_cache.dir
