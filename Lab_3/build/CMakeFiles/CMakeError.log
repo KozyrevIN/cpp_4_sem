@@ -1,0 +1,33 @@
+Determining if the PETSC_USE_COMPLEX exist failed with the following output:
+Change Dir: /home/tea_shroom/Programming/cpp_4_sem/hyperelasticity/build/CMakeFiles/CMakeScratch/TryCompile-FDRE4q
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_ee314/fast && /usr/bin/make  -f CMakeFiles/cmTC_ee314.dir/build.make CMakeFiles/cmTC_ee314.dir/build
+make[1]: Entering directory '/home/tea_shroom/Programming/cpp_4_sem/hyperelasticity/build/CMakeFiles/CMakeScratch/TryCompile-FDRE4q'
+Building C object CMakeFiles/cmTC_ee314.dir/CheckSymbolExists.c.o
+/usr/bin/cc  -I/opt/petsc/linux-c-opt/include  -o CMakeFiles/cmTC_ee314.dir/CheckSymbolExists.c.o -c /home/tea_shroom/Programming/cpp_4_sem/hyperelasticity/build/CMakeFiles/CMakeScratch/TryCompile-FDRE4q/CheckSymbolExists.c
+/home/tea_shroom/Programming/cpp_4_sem/hyperelasticity/build/CMakeFiles/CMakeScratch/TryCompile-FDRE4q/CheckSymbolExists.c: In function ‘main’:
+/home/tea_shroom/Programming/cpp_4_sem/hyperelasticity/build/CMakeFiles/CMakeScratch/TryCompile-FDRE4q/CheckSymbolExists.c:8:19: error: ‘PETSC_USE_COMPLEX’ undeclared (first use in this function); did you mean ‘PETSC_HAVE_COMPLEX’?
+    8 |   return ((int*)(&PETSC_USE_COMPLEX))[argc];
+      |                   ^~~~~~~~~~~~~~~~~
+      |                   PETSC_HAVE_COMPLEX
+/home/tea_shroom/Programming/cpp_4_sem/hyperelasticity/build/CMakeFiles/CMakeScratch/TryCompile-FDRE4q/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [CMakeFiles/cmTC_ee314.dir/build.make:78: CMakeFiles/cmTC_ee314.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/tea_shroom/Programming/cpp_4_sem/hyperelasticity/build/CMakeFiles/CMakeScratch/TryCompile-FDRE4q'
+make: *** [Makefile:127: cmTC_ee314/fast] Error 2
+
+
+File CheckSymbolExists.c:
+/* */
+#include <petscsystypes.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef PETSC_USE_COMPLEX
+  return ((int*)(&PETSC_USE_COMPLEX))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
