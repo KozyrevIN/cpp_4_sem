@@ -1,0 +1,10 @@
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/stress_test.dir
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/run.dir
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/debug.dir
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/release.dir
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/runclean.dir
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/distclean.dir
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/strip_comments.dir
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/info.dir
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/edit_cache.dir
+/home/tea_shroom/Programming/cpp_4_sem/micro_proj/build/CMakeFiles/rebuild_cache.dir
