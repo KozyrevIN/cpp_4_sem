@@ -1,0 +1,10 @@
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/step-49.dir
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/run.dir
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/debug.dir
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/release.dir
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/runclean.dir
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/distclean.dir
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/strip_comments.dir
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/info.dir
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/edit_cache.dir
+/home/programming/cpp_4_sem/step-49/build/CMakeFiles/rebuild_cache.dir

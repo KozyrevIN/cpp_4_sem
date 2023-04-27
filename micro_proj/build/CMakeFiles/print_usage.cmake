@@ -1,8 +1,8 @@
-message(
+MESSAGE(
 "###
 #
-#  Project  stress_test  set up with  deal.II-9.5.0-pre  found at
-#      /usr/local/lib
+#  Project  stress_test  set up with  deal.II-9.3.2  found at
+#      /usr
 #
 #  CMAKE_BUILD_TYPE:          Debug
 #

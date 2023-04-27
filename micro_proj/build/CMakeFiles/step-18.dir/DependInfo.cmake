@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/tea_shroom/Programming/cpp_4_sem/micro_proj/step-18.cc" "CMakeFiles/step-18.dir/step-18.cc.o" "gcc" "CMakeFiles/step-18.dir/step-18.cc.o.d"
+  "/home/programming/cpp_4_sem/micro_proj/step-18.cc" "CMakeFiles/step-18.dir/step-18.cc.o" "gcc" "CMakeFiles/step-18.dir/step-18.cc.o.d"
   )
 
 # Targets to which this target links.

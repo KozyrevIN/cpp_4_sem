@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/tea_shroom/Programming/cpp_4_sem/micro_proj/stress_test.cpp" "CMakeFiles/stress_test.dir/stress_test.cpp.o" "gcc" "CMakeFiles/stress_test.dir/stress_test.cpp.o.d"
+  "/home/programming/cpp_4_sem/micro_proj/stress_test.cc" "CMakeFiles/stress_test.dir/stress_test.cc.o" "gcc" "CMakeFiles/stress_test.dir/stress_test.cc.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

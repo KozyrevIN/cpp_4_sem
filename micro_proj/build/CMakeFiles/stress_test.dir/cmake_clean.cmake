@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/stress_test.dir/stress_test.cpp.o"
-  "CMakeFiles/stress_test.dir/stress_test.cpp.o.d"
+  "CMakeFiles/stress_test.dir/stress_test.cc.o"
+  "CMakeFiles/stress_test.dir/stress_test.cc.o.d"
   "stress_test"
   "stress_test.pdb"
 )
