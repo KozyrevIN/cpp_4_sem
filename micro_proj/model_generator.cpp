@@ -4,7 +4,7 @@
 #include <cmath>
 #include <iostream>
 
-int CreateTorus(float r1, float r2, float lc)
+/*int CreateTorus(float r1, float r2, float lc)
 {
     //points
     int point[9]; int center_point[3];
@@ -94,82 +94,54 @@ int CreateSurface(int argc, char **argv, int n, int m, float* heighs)
   gmsh::finalize();
 
   return 0;
-}
+}*/
 
 class Mesh
 {
 public:
-    Mesh(int size_c, int size_r, float inner_r, float outer_r)
-    {
-        This->size_c = size_c;
-        This->size_r = size_r;
-        This->inner_r = inner_r;
-        This->outer_r = outer_r;
-
-        height_map = std::vector(std::vector(0, size_r), size_c);
-        float inner_h = inner_r;
-        float outer_h = inner_r / 2;
-
-        for (int i = 0; i < size_c){
-            for (int j = 0; j < size_r){
-                height_map[i][j] = i / (size_c - 1) * outer_h  + (size_c - 1 - i) / (size_c - 1) * inner_h;
-            }
-        }
-    };
-
-    Mesh(int size_c; //amount of circular circles in a mesh
-    int size_r; //amount of radial lines in a mesh
-    std::vector<std::vector<float>> height_map; 
-    float inner_r;
-    float outer_r;)
-    {
-        This->size_c = size_c;
-        This->size_r = size_r;
-        This->height_map = height_map; 
-        This->inner_r = inner_r;
-        This->outer_r = outer_r;
-    };
+    Mesh(float inner_r, float outer_r, int n, float dist, float r): inner_r{inner_r}, outer_r{outer_r}, n{n}, dist{dist}, r{r} {};
 
     void GenerateOutput()
     {
         gmsh::initialize();
         gmsh::model::add("wheel");
+        
+        //center hole points
+        std::vector<int> center_points = std::vector{n, 0};
+        for (int i = 0; i < n; ++i){
+            center_points[i] = gmsh::model::geo::addPoint(dist * cos(2*i*M_PI / n), dist * sin(2*i*M_PI / n), 0);
+        }
 
-        std::vector<std::vector<int>> points = std::vector(std::vector(0, size_r), size_c)
-
-        //points
-        for (int i = 0; i < size_c; ++i){
-            for (int j = 0; j < size_r; ++j){
-                points[i][j] = gmsh::model::geo::addPoint(cos(2*j*M_PI/size_r), sin(2*j*M_PI/size_r), height_map[i][j]);
-                points[i][j] = gmsh::model::geo::addPoint(cos(2*j*M_PI/size_r), sin(2*j*M_PI/size_r), -(h0*(n-i) + h1*i)/n);
+        //points forming each hole
+        std::vector<std::vector<int>> edge_points = std::vector{n, 0};
+        for (int i = 0; i < n + 1; ++i){
+            for (int j = 0; j < 3; ++j){
+                edge_points[i][j] = gmsh::model::geo::addPoint(this->dist * cos(2*i*M_PI / this->n) + this->r * sin(2*j*M_PI / 3),
+                                                               this->dist * sin(2*i*M_PI / this->n) + this->r * cos(2*j*M_PI / 3) , 0);
             }
         }
 
-        //arcs
-        int* arcs = new int [4*n*m];
-        for (int i = 0; i < n; ++i)
-        {
-            for(int j = 0; j < m; ++j){
-            arcs[n*i + j] = gmsh::model::geo::addCircleArc(points[n*i + j], central_points[i],  points[n*i + ((j + 1) % m)]);
-            arcs[m*n + n*i + j] = gmsh::model::geo::addCircleArc(points[n*m + n*i + j], central_points[i],  points[n*i + ((j + 1) % m)]);
-
-            arcs[n*i + j] = gmsh::model::geo::addCircleArc(points[n*i + j], central_points[i],  points[n*i + ((j + 1) % m)]);
+        //creating arcs
+        std::vector<int> circles = std::vector(n, 0);
+        for (int i = 0; i <= n; ++i){
+            int tmp_1 = gmsh::model::geo::addCircleArc(edge_points[i][0], central_points[i], edge_points[i][1]);
+            int tmp_2 = gmsh::model::geo::addCircleArc(edge_points[i][1], central_points[i], edge_points[i][2]);
+            int tmp_3 = gmsh::model::geo::addCircleArc(edge_points[i][2], central_points[i], edge_points[i][0]);
+            circles[i] = (int)(i >= n) * gmsh::model::geo::addCurveLoop(tmp1, tmp2, tmp3);
         }
 
-    }
+        int surface = gmsh::model::geo::addPlaneSurface(circles)
 
-  gmsh::model::geo::addVolume({t1, -t2});
+        gmsh::model::geo::synchronize();
 
-  gmsh::model::geo::synchronize();
+        gmsh::model::mesh::generate(2);
 
-  gmsh::model::mesh::generate(3);
+        gmsh::write("wheel.msh");
 
-  gmsh::write("ex_0.3.msh");
+        std::set<std::string> args(argv, argv + argc);
+        if(!args.count("-nopopup")) gmsh::fltk::run();
 
-  std::set<std::string> args(argv, argv + argc);
-  if(!args.count("-nopopup")) gmsh::fltk::run();
-
-  gmsh::finalize();
+        gmsh::finalize();
     }
 
 private:
@@ -178,4 +150,10 @@ private:
     std::vector<std::vector<float>> height_map; 
     float inner_r;
     float outer_r;
+}
+
+int main()
+{
+    Mesh a = new Mesh(1, 4, 3, 3, 0.5);
+    a.GenerateOutput;
 }

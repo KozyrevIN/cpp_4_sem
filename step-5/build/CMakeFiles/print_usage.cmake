@@ -1,7 +1,7 @@
 MESSAGE(
 "###
 #
-#  Project  step-5  set up with  deal.II-9.3.2  found at
+#  Project  model_generator  set up with  deal.II-9.3.2  found at
 #      /usr
 #
 #  CMAKE_BUILD_TYPE:          Debug

@@ -66,9 +66,9 @@ include CMakeFiles/run.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/run.dir/progress.make
 
-CMakeFiles/run: step-5
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/programming/cpp_4_sem/step-5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Run step-5 with Debug configuration"
-	./step-5
+CMakeFiles/run: model_generator
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/programming/cpp_4_sem/step-5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Run model_generator with Debug configuration"
+	./model_generator
 
 run: CMakeFiles/run
 run: CMakeFiles/run.dir/build.make

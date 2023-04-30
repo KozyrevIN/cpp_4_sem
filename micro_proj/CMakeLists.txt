@@ -1,7 +1,3 @@
-#
-#  CMake script for the step-18 tutorial program:
-##
-
 # Set the name of the project and target:
 SET(TARGET "stress_test")
 

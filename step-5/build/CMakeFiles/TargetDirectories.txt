@@ -1,4 +1,4 @@
-/home/programming/cpp_4_sem/step-5/build/CMakeFiles/step-5.dir
+/home/programming/cpp_4_sem/step-5/build/CMakeFiles/model_generator.dir
 /home/programming/cpp_4_sem/step-5/build/CMakeFiles/run.dir
 /home/programming/cpp_4_sem/step-5/build/CMakeFiles/debug.dir
 /home/programming/cpp_4_sem/step-5/build/CMakeFiles/release.dir

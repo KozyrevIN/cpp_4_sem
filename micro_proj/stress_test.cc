@@ -817,16 +817,19 @@ template <int dim>
   {
   const double inner_radius = 0.4, outer_radius = 1;
   //GridGenerator::cylinder_shell(triangulation, 1, inner_radius, outer_radius);
-  Triangulation<dim> triangulation;
+  Triangulation<dim-1> triangulation;
 
-  GridIn<dim> gridin;
+  GridIn<dim-1> gridin;
   gridin.attach_triangulation(triangulation);
-  std::ifstream f("wheel.vtk");
+  std::ifstream f("wheel.msh");
   gridin.read_msh(f);
 
-  cout << '\n' << "nrnr" << '\n';
+  Triangulation<3> triangulation_final;
 
-  print_mesh_info(triangulation, "wheel.vtu");
+  GridGenerator::extrude_triangulation(triangulation, 3, 2.0, triangulation_final);
+  print_mesh_info(out, "grid-4.vtu");
+
+  //print_mesh_info(triangulation, "wheel.vtu");
 
     for (const auto &cell : triangulation.active_cell_iterators())
       for (const auto &face : cell->face_iterators())
